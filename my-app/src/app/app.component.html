@@ -8,6 +8,7 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <style>
+  
   :host {
     --bright-blue: oklch(51.01% 0.274 263.83);
     --electric-violet: oklch(53.18% 0.28 296.97);
@@ -47,7 +48,7 @@
   h1 {
     font-size: 3.125rem;
     color: var(--gray-900);
-    font-weight: 500;
+    font-weight: bold;
     line-height: 100%;
     letter-spacing: -0.125rem;
     margin: 0;
@@ -61,7 +62,36 @@
     color: var(--gray-700);
   }
 
+  .menu {
+    color:rgb(54, 54, 54);
+    font-size:large;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .menu:hover {
+    color: rgb(0, 110, 255);
+    /* font-size: 125%; */
+  }
+
+  .workpic {
+    width: 500px;
+    border-radius:12px;
+  }
+
+  .workdiv {
+    box-shadow: 0px 0px 20px 10px rgba(36, 36, 36, 0.05);
+    border-radius: 25px;
+    padding: 20px;
+  }
+
+  .workdiv:hover {
+    opacity: 75%;
+  }
+
   main {
+    margin-top: 30px;
     width: 100%;
     min-height: 100%;
     display: flex;
@@ -71,12 +101,24 @@
     box-sizing: inherit;
     position: relative;
   }
-  
+
   img {
   object-fit: cover;
   width: 250px;
   height: 250px;
-  } 
+  }
+
+  .work {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .right-side {
+    margin: 50px;
+  }
 
   .angular-logo {
     max-width: 9.2rem;
@@ -90,19 +132,9 @@
     margin-bottom: 3rem;
   }
 
-  .content h1 {
-    margin-top: 1.75rem;
-  }
-
-  .content p {
+  .content {
     margin-top: .5rem;
     margin-bottom: .5rem;
-  }
-
-  .divider {
-    width: 1px;
-    background: var(--red-to-pink-to-purple-vertical-gradient);
-    margin-inline: 0.5rem;
   }
 
   .pill-group {
@@ -111,6 +143,7 @@
     align-items: start;
     flex-wrap: wrap;
     gap: 1.25rem;
+    width: 250px;
   }
 
   .pill {
@@ -169,29 +202,28 @@
     fill: var(--gray-900);
   }
 
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
+  .project-name {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 20px 0 0 10px;
+  }
 
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
+  .left-side {
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 25px;
   }
 </style>
 
 <main class="main">
+  
   <div class="content">
     <div class="left-side">
       <h1>studio.</h1>
-      <p>Welcome to your new website 🎉</p>
-      <img src="/assets/portfolio pic.jpeg"/>
+      <p style="margin-top: 5px; margin-bottom: 20px;">welcome to your new home</p>
+      <img src="/assets/portfolio pic.jpeg" style="border-radius:12px">
       <h3 style="margin-top: 10px">Dylan Henry</h3>
-      <p>design & develop</p>
+      <p>designer | developer</p>
       <div class="social-links">
         <a
           href="https://github.com/angular/angular"
@@ -253,8 +285,12 @@
           </svg>
         </a>
       </div>
+      <div style="margin-top: 30px">
+        <p class="menu">Work</p>
+        <p class="menu">About</p>
+        <p class="menu">Contact</p>
+      </div>
     </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side" style="margin-top: 75px">
       <div class="pill-group">
         @for (item of [
@@ -284,6 +320,20 @@
             </svg>
           </a>
         }
+      </div>
+    </div>
+    <div class="work">
+      <div class="workdiv">
+        <img src="/assets/iassistant.png" class="workpic">
+        <p class="project-name">iAssistant: ALS Health App</p>
+      </div>
+      <div class="workdiv">
+        <img src="/assets/youtube.png" class="workpic">
+        <p class="project-name">YouTube Music Redesign</p>
+      </div>
+      <div class="workdiv">
+        <img src="/assets/barstool.jpeg" class="workpic">
+        <p class="project-name">Barstool Sportsbook</p>
       </div>
     </div>
   </div>
