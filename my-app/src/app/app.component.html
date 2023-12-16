@@ -45,6 +45,11 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  body {
+    background: linear-gradient(180deg, #000000 90%, #3E5CC5 100%);
+  }
+
+
   h1 {
     font-size: 3.125rem;
     color: var(--gray-900);
@@ -64,21 +69,24 @@
 
   .menu {
     color:rgb(179, 179, 179);
-    font-size:large;
+    font-size:medium;
     margin: 10px 0 10px 0;
     font-weight: 500;
   }
 
   .menu-active {
     color: rgb(0, 20, 47);
-    font-size:large;
+    font-size:medium;
     margin: 10px 0 10px 0;
     font-weight: 600;
+    transition-property: color;
+    transition-duration: 1s;
   }
 
   .menu:hover {
     color: rgb(0, 110, 255);
-    /* font-size: 125%; */
+    transition-property: color;
+    transition-duration: 1s;
   }
 
   .menu-active:hover {
@@ -92,21 +100,25 @@
 
   .workpic {
     width: 700px;
-    /* border-radius:12px; */
+    border-radius: 12px;
   }
 
   .workdiv {
     box-shadow: 0px 0px 20px 10px rgba(36, 36, 36, 0.05);
     border-radius: 25px;
     padding: 20px;
+    background-color: aliceblue;
+    opacity: 50%;
+    transition-property: opacity;
+    transition-duration: .5s;
   }
 
   .workdiv:hover {
-    opacity: 75%;
+    /* background-color: rgb(184, 184, 184); */
+    opacity: 100%;
   }
 
   main {
-    margin-top: 30px;
     width: 100%;
     min-height: 100%;
     display: flex;
@@ -115,6 +127,17 @@
     padding: 1rem;
     box-sizing: inherit;
     position: relative;
+    animation: fadeInAnimation ease 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   img {
@@ -175,25 +198,32 @@
     text-decoration: none;
   }
 
-  .left-side {
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .profile {
     background-color: aliceblue;
     padding: 20px;
     border-radius: 25px;
-    height: 600px;
+    margin-bottom: 20px;
   }
 
   h3 {
     font-size: 25px;
     margin-bottom: 5px;
   }
+
 </style>
 
+<body>
 <main class="main">
   
   <div class="content">
     <div class="left-side">
+      <div class="profile">
       <h1>studio.</h1>
-      <p style="margin-top: 5px; margin-bottom: 20px;">welcome to your new home</p>
+      <p style="margin-top: 5px; margin-bottom: 20px;">/////////////////////////////</p>
       <img src="/assets/portfolio pic.jpeg">
       <h3 style="margin-top: 10px">DYLAN HENRY</h3>
       <p style="margin-bottom: 20px;">designer | developer</p>
@@ -264,17 +294,19 @@
         <p class="menu">CONTACT</p>
       </div>
     </div>
+    </div>
+
     <div class="work">
-      <a href="app.component.html">
-        <div class="workdiv">
-          <img src="/assets/iassistant.png" class="workpic">
-          <p class="project-name">iAssistant: ALS Health App</p>
-        </div>
-      </a>
       <a href="app.component.html">
         <div class="workdiv">
           <img src="/assets/youtube.png" class="workpic">
           <p class="project-name">YouTube Music Redesign</p>
+        </div>
+      </a>
+      <a href="app.component.html">
+        <div class="workdiv">
+          <img src="/assets/iassistant.png" class="workpic">
+          <p class="project-name">iAssistant: ALS Health App</p>
         </div>
       </a>
       <a href="app.component.html">
@@ -286,14 +318,6 @@
     </div>
   </div>
 </main>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+</body>
 
 <router-outlet></router-outlet>
