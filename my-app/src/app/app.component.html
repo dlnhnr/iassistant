@@ -46,7 +46,7 @@
   }
 
   body {
-    background: linear-gradient(180deg, #000000 90%, #3E5CC5 100%);
+    background: #1F2733;
   }
 
 
@@ -68,7 +68,7 @@
   }
 
   .menu {
-    color:rgb(179, 179, 179);
+    color:rgb(29, 29, 29);
     font-size:medium;
     margin: 10px 0 10px 0;
     font-weight: 500;
@@ -78,7 +78,7 @@
     color: rgb(0, 20, 47);
     font-size:medium;
     margin: 10px 0 10px 0;
-    font-weight: 600;
+    font-weight: 650;
     transition-property: color;
     transition-duration: 1s;
   }
@@ -86,7 +86,7 @@
   .menu:hover {
     color: rgb(0, 110, 255);
     transition-property: color;
-    transition-duration: 1s;
+    transition-duration: .3s;
   }
 
   .menu-active:hover {
@@ -95,27 +95,32 @@
 
   .work {
     width: 100%;
-    margin-left: 50px;
+    margin-left: 350px;
   }
 
   .workpic {
-    width: 700px;
-    border-radius: 12px;
+    width: 750px;
+    height: 300px;
+    border-radius: 10px;
+    position: absolute;
+    transition-duration: 1s;
+    transition-property: opacity;
+  }
+
+  .workpic:hover {
+    opacity: 40%;
   }
 
   .workdiv {
-    box-shadow: 0px 0px 20px 10px rgba(36, 36, 36, 0.05);
-    border-radius: 25px;
-    padding: 20px;
-    background-color: aliceblue;
-    opacity: 50%;
-    transition-property: opacity;
-    transition-duration: .5s;
-  }
-
-  .workdiv:hover {
-    /* background-color: rgb(184, 184, 184); */
-    opacity: 100%;
+    /* box-shadow: 0px 0px 20px 20px rgba(36, 36, 36, 0.05); */
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    /* opacity: 50%; */
+    /* transition-property: opacity;
+    transition-duration: .5s; */
+    width: 750px;
+    height:300px;
+    margin-bottom: 20px;
   }
 
   main {
@@ -127,7 +132,7 @@
     padding: 1rem;
     box-sizing: inherit;
     position: relative;
-    animation: fadeInAnimation ease 8s;
+    animation: fadeInAnimation ease 5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
@@ -189,9 +194,14 @@
   }
 
   .project-name {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 800;
-    margin: 20px 0 0 10px;
+    margin: 225px 20px 20px 20px;
+    background-color: #000000;
+    color: white;
+    position: absolute;
+    padding: 10px;
+    border-radius: 3px;
   }
 
   a {
@@ -203,10 +213,11 @@
   }
 
   .profile {
-    background-color: aliceblue;
+    background-color: #ffffff;
     padding: 20px;
-    border-radius: 25px;
+    border-radius: 12px 0 0 12px;
     margin-bottom: 20px;
+    position: fixed;
   }
 
   h3 {
